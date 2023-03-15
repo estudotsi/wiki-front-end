@@ -1,5 +1,4 @@
-
-{{portal.nome}}
+<!--{{portal.nome}}
 
 <tr>
     <th scope="row">{{portal.id}}</th>
@@ -9,3 +8,57 @@
     <td>{{portal.versaoWordpress}}</td>
     <td>{{portal.ativo}}</td>
 </tr>
+
+<div class="card">
+    <img src="" alt="Capa do livro">
+    <div class="info-card">
+        <p class="informacoes">Nome:</p>
+        <p class="titulo">{{ portal.nome }}</p>
+        <p class="informacoes">Servidor de produção:</p>
+        <p class="resultado">{{ portal.servidorProducao }}</p>
+        <p class="informacoes">Servidor de homologação</p>
+        <p class="resultado">{{ portal.servidorHomologacao }}</p>
+        <p class="informacoes">Versão wordpress</p>
+        <p class="resultado">{{ portal.versaoWordpress }}</p>
+        <p class="informacoes">Status</p>
+        <p class="resultado">{{ portal.ativo }}</p>
+
+
+    </div>
+</div>-->
+
+<div class="container mt-5 p-5">
+    <div class="row">
+
+
+        <div class="card card-margin">
+            <div class="card-header no-border">
+                <h5 class="card-title">MOM</h5>
+            </div>
+            <div class="card-body pt-0">
+                <div class="widget-49">
+                    <div class="widget-49-title-wrapper">
+                        <div class="widget-49-date-success">
+                            <span class="widget-49-date-day">22</span>
+                            <span class="widget-49-date-month">apr</span>
+                        </div>
+                        <div class="widget-49-meeting-info">
+                            <span class="widget-49-pro-title">Nome</span>
+                            <span class="widget-49-meeting-time">{{ portal.nome }}</span>
+                        </div>
+                    </div>
+                    <ol class="widget-49-meeting-points">
+                        <li class="widget-49-meeting-item"><span>Servidor de produção {{ portal.servidorProducao }}</span></li>
+                        <li class="widget-49-meeting-item"><span>Servidor de homologação {{ portal.servidorHomologacao }}</span></li>
+                        <li class="widget-49-meeting-item"><span>Versão do Wordopress {{ portal.versaoWordpress }}</span></li>
+                        <li class="widget-49-meeting-item"><span>Ativo {{ portal.ativo }}</span></li>
+                    </ol>
+                    <div class="widget-49-meeting-action">
+                        <a href="#" class="btn btn-sm btn-flash-border-success">Funções</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
