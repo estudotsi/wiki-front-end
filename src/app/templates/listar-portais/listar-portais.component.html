@@ -1,0 +1,23 @@
+
+
+<ul>
+    <li *ngFor="let portal of listaDePortais$">
+   <app-portal [portal]="portal"></app-portal>
+    </li>
+  </ul>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Servidor Produção</th>
+        <th scope="col">Servidor Homologação</th>
+        <th scope="col">Versão Wordpress</th>
+        <th scope="col">Ativo</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let portal of listaDePortais$">
+        <app-portal [portal]="portal"></app-portal>
+    </tbody>
+  </table>
