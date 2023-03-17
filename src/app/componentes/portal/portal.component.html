@@ -2,25 +2,35 @@
     <div class="row">
         <div class="card card-margin">
             <div class="card-header no-border">
-                <h5 class="card-title">{{ portal.nome }}</h5>
+                <h5 class="card-title"></h5>
             </div>
             <div class="card-body pt-0">
                 <div class="widget-49">
                     <div class="widget-49-title-wrapper">
                         <div class="widget-49-date-success">
-                            <span class="widget-49-date-day">22</span>
-                            <span class="widget-49-date-month">apr</span>
+                            <span class="widget-49-date-day">17</span>
+                            <span class="widget-49-date-month">mar</span>
                         </div>
                         <div class="widget-49-meeting-info">
-                            <span class="widget-49-pro-title">Nome</span>
-                            <span class="widget-49-meeting-time">{{ portal.nome }}</span>
+                            <span class="widget-49-pro-title">{{ portal.nome }}</span>
+                            <span class="widget-49-meeting-time"></span>
                         </div>
                     </div>
                     <ol class="widget-49-meeting-points">
-                        <li class="widget-49-meeting-item"><span>Servidor de produção: {{ portal.servidorProducao }}</span></li>
-                        <li class="widget-49-meeting-item"><span>Servidor de homologação: {{ portal.servidorHomologacao }}</span></li>
-                        <li class="widget-49-meeting-item"><span>Versão do Wordopress: {{ portal.versaoWordpress }}</span></li>
-                        <li class="widget-49-meeting-item"><span>Ativo: {{ portal.ativo }}</span></li>
+                        <li class="widget-49-meeting-item-title"><span>Url de produção:</span></li>
+                        <li class="widget-49-meeting-item"><span><a href="{{ portal.urlProducao }}">{{ portal.urlProducao }}</a></span></li>
+                        <li class="widget-49-meeting-item-title"><span>Servidor de Produção:</span></li>
+                        <li class="widget-49-meeting-item"><span>{{ portal.servidorProducao }}</span></li>
+                        <li class="widget-49-meeting-item-title"><span>Versão do Wordopress Produção:</span></li>
+                        <li class="widget-49-meeting-item"><span>{{ portal.versaoWordpressProducao }}</span></li>
+                        <li class="widget-49-meeting-item-title"><span>Url de homologação:</span></li>
+                        <li class="widget-49-meeting-item"><span><a href="{{ portal.urlHomologacao }}" target="_blank">{{ portal.urlHomologacao }}</a></span></li>
+                        <li class="widget-49-meeting-item-title"><span>Servidor de Homologaçãp:</span></li>
+                        <li class="widget-49-meeting-item"><span>{{ portal.servidorHomologacao }}</span></li>
+                        <li class="widget-49-meeting-item-title"><span>Versão do Wordopress Homologação:</span></li>
+                        <li class="widget-49-meeting-item"><span>{{ portal.versaoWordpressHomologacao }}</span></li>
+                        <li class="widget-49-meeting-item-title"><span>Responsável:</span></li>
+                        <li class="widget-49-meeting-item"><span>{{ portal.responsavel }} </span></li>
                     </ol>
                     <div class="widget-49-meeting-action">
                         <button type="button" class="btn btn-outline-danger m-1">Excluir</button>
