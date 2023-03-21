@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { PortalComponent } from './componentes/portal/portal.component';
 import { ListarPortaisComponent } from './templates/listar-portais/listar-portais.component';
 import { CadastroPortalComponent } from './templates/cadastro-portal/cadastro-portal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CadastroPortalComponent } from './templates/cadastro-portal/cadastro-po
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,94 +6,74 @@
                     <div class="row">
                         <div class="col-md-7 pe-0">
                             <div class="form-left h-100 py-5 px-5">
-                                <form action="" class="row g-4">
+                                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-4">
+
                                     <div class="col-12">
-                                        <label for="nome">Nome do portal<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"></div>
-                                            <input type="text" id="nome" class="form-control" placeholder="Nome do Portal">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nomePortal" class="form-control" formControlName="nomePortal" placeholder="Nome do Portal">                 
                                         </div>
+                                        <div *ngIf="form.controls.nomePortal.invalid && (form.controls.nomePortal.dirty || form.controls.nomePortal.touched)"class="alert alert-danger">Obrigatório</div>
                                     </div>
-
                                     <div class="col-12">
-                                        <label for="nome">Servidor produção<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"></div>
-                                            <input type="text" id="nome" class="form-control" placeholder="Servidor produção">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="servidorProducao" placeholder="Servidor produção">
                                         </div>
                                     </div>
-
                                     <div class="col-12">
-                                        <label for="nome">Servidor homologação<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"></div>
-                                            <input type="text" id="nome" class="form-control" placeholder="Servidor homologação">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="urlProducao" placeholder="Url produção">
                                         </div>
                                     </div>
-
                                     <div class="col-12">
-                                        <label for="nome">Versão do wordpress<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"></div>
-                                            <input type="text" id="nome" class="form-control" placeholder="Versão wordpress">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="versaoWordpressProducao" placeholder="Versão wordpress produção">
                                         </div>
                                     </div>
-                                    
-                                    <div class="col-12">
-                                        <label for="nome">Contato<span class="text-danger">*</span></label>
+                                    <div class="col-12">                                      
                                         <div class="input-group">
-                                            <div class="input-group-text"></div>
-                                            <input type="text" id="nome" class="form-control" placeholder="Contato">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="servidorHomologacao" placeholder="Servidor homologação">
                                         </div>
                                     </div>
-
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary px-4 float-end mt-4">Login</button>
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="urlHomologacao" placeholder="Url homologação">
+                                        </div>
                                     </div>
-                                        <div class="col-12">
-                                            <label>Username<span class="text-danger">*</span></label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                <input type="text" class="form-control" placeholder="Enter Username">
-                                            </div>
+                                    <div class="col-12">                       
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="versaoWordpressHomologacao" placeholder="Versão wordpress homologação">
                                         </div>
-
-                                        <div class="col-12">
-                                            <label>Password<span class="text-danger">*</span></label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                                                <input type="text" class="form-control" placeholder="Enter Password">
-                                            </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-pen"></i></div>
+                                            <input type="text" id="nome" class="form-control" formControlName="responsavel" placeholder="Responsável">
                                         </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                <label class="form-check-label" for="inlineFormCheck">Remember me</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <a href="#" class="float-end text-primary">Forgot Password?</a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary px-4 float-end mt-4">login</button>
-                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button [disabled]="form.controls.invalid" type="submit" class="btn px-4 float-end mt-4">Login</button>
+                                    </div>
+                                       
                                 </form>
                             </div>
                         </div>
                         <div class="col-md-5 ps-0 d-none d-md-block">
-                            <div class="form-right h-100 bg-primary text-white text-center pt-5">
-                                <i class="bi bi-bootstrap"></i>
-                                <h2 class="fs-1">Welcome Back!!!</h2>
+                            <div class="form-right h-100 text-white text-center pt-5">
+                                <i class="bi bi-pencil-square"></i>
+                                <h2 class="fs-1">Cadastro de Portais</h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p class="text-end text-secondary mt-3">Bootstrap 5 Login Page Design</p>
             </div>
         </div>
     </div>
 </div>
-Add CSS
+

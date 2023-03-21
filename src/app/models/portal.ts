@@ -7,5 +7,5 @@ export interface Portal {
     urlHomologacao?: string;
     servidorHomologacao?: string;
     versaoWordpressHomologacao?: string;
-    responsavel: string;
+    responsavel?: string;
 }
