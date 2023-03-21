@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PortalService } from 'src/app/services/portal.service';
 
 @Component({
   selector: 'app-cadastro-portal',
@@ -9,31 +11,35 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class CadastroPortalComponent implements OnInit {
 
   public form!: FormGroup;
+  
 
-  constructor(private fb: FormBuilder) {
-
-    this.form = this.fb.group({
-      nomePortal: ['', Validators.compose([
-        Validators.minLength(3),
-        Validators.maxLength(30),
-        Validators.required
-      ])],
-      servidorProducao: [''],
-      urlProducao: [''],
-      versaoWordpressProducao: [''],
-      servidorHomogacao: [''],
-      urlHomologacao: [''],
-      versaoWordpressHomologacao: [''],
-      responsavel: [''],
-    });
+  constructor(private fb: FormBuilder, private service: PortalService, private router: Router) {
 
   }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      nome: ['', Validators.compose([
+        Validators.minLength(3),
+        Validators.maxLength(30),
+        Validators.required
+      ])],
+      urlProducao: [''],
+      servidorProducao: [''],
+      versaoWordpressProducao: [''],
+      urlHomologacao: [''],
+      servidorHomologacao: [''],
+      versaoWordpressHomologacao: [''],
+      responsavel: [''],
+    });
   }
 
-  onSubmit(){
-    console.log("teste");
+  submit(){
+    if(this.form.valid){
+      this.service.adicionarPortal(this.form.value).subscribe(() => {
+        this.router.navigate([''])
+      })
+    }
   }
 
 }

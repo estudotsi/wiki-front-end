@@ -14,23 +14,25 @@ a {
     font-size: 100px;
 }
 
-.input-group-text{
+.input-group-text {
     background-color: #CCCCFF;
 }
 
-.form-right{
-    background-color: #CCCCFF; 
+.form-right {
+    background-color: #CCCCFF;
 }
 
-.btn{
+.btn {
     background-color: #DDA0DD;
 }
 
 .btn:disabled {
-    background-color: black;
-  }
+    opacity: 0.5;
+}
 
-  .alert{
-    margin-top: 5px;
+.alert {
+    display: flex;
+    align-items: center;
     height: 20px;
-  }
+    margin-top: 5px;
+}

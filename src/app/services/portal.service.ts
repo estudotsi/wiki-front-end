@@ -19,10 +19,7 @@ export class PortalService {
   }
 
   adicionarPortal(portal: Portal): Observable<Portal> {
-    return this.httpClient.post<Portal>(this.url, portal)
-    .pipe(
-      catchError(this.handleError('listarPortais', portal))
-    );
+    return this.httpClient.post<Portal>(this.url, portal);
   }
 
 }

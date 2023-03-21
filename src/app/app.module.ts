@@ -9,6 +9,7 @@ import { PortalComponent } from './componentes/portal/portal.component';
 import { ListarPortaisComponent } from './templates/listar-portais/listar-portais.component';
 import { CadastroPortalComponent } from './templates/cadastro-portal/cadastro-portal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ExcluirPortalComponent } from './templates/excluir-portal/excluir-portal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     PortalComponent,
     ListarPortaisComponent,
-    CadastroPortalComponent
+    CadastroPortalComponent,
+    ExcluirPortalComponent
   ],
   imports: [
     BrowserModule,
