@@ -12,10 +12,7 @@ export class CadastroPortalComponent implements OnInit {
 
   public form!: FormGroup;
   
-
-  constructor(private fb: FormBuilder, private service: PortalService, private router: Router) {
-
-  }
+  constructor(private fb: FormBuilder, private service: PortalService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -37,7 +34,8 @@ export class CadastroPortalComponent implements OnInit {
   submit(){
     if(this.form.valid){
       this.service.adicionarPortal(this.form.value).subscribe(() => {
-      this.router.navigate([''])
+      this.router.navigate(['']);
+    
       })
     }
   }

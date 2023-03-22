@@ -1,1 +1,37 @@
-<p>excluir-portal works!</p>
+<!--<div class="">
+    <p>O Portal <b>{{ portal.nome }}</b> será apagado. <br/> Confirma a exclusão?</p>
+    <div class="">
+        <button class="botao botao-excluir" (click)="excluirPortal()">Excluir</button>
+        <button class="botao botao-cancelar" (click)="cancelar()">Cancelar</button>
+    </div>
+</div>-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+<div class="container">
+
+    <div class="card l-bg-cherry">
+        <div class="card-statistic-3 p-4">
+            <i class="bi bi-eraser-fill"></i>
+            <div class="mb-4">
+                <h5 class="card-title mb-0">O Portal <b>{{ portal?.nome }}</b> será apagado. <br/> Confirma a exclusão?</h5>
+            </div>
+            <div class="row align-items-center mb-2 d-flex">
+                <div class="col-8">
+                    <h2 class="d-flex align-items-center mb-0">
+                        <button type="button" class="btn btn-warning" (click)="excluirPortal()">Excluir</button>
+                    </h2>
+                </div>
+                <div class="col-4">
+                    <h2 class="d-flex align-items-center mb-0">
+                        <button style="margin: -30px;" type="button" class="btn btn-info" (click)="cancelar()">Cancelar</button>
+                    </h2>
+                </div>
+            </div>
+            <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
