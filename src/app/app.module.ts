@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { ListarPortaisComponent } from './templates/listar-portais/listar-portai
 import { CadastroPortalComponent } from './templates/cadastro-portal/cadastro-portal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExcluirPortalComponent } from './templates/excluir-portal/excluir-portal.component';
+import { MatSnackBarModule } from  '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ExcluirPortalComponent } from './templates/excluir-portal/excluir-porta
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
