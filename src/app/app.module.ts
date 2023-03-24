@@ -11,6 +11,8 @@ import { CadastroPortalComponent } from './templates/cadastro-portal/cadastro-po
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExcluirPortalComponent } from './templates/excluir-portal/excluir-portal.component';
 import { AlterarPortalComponent } from './templates/alterar-portal/alterar-portal.component';
+import { MensagemSucessoComponent } from './templates/mensagem-sucesso/mensagem-sucesso.component';
+import { MensagemAlterarComponent } from './templates/mensagem-alterar/mensagem-alterar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AlterarPortalComponent } from './templates/alterar-portal/alterar-porta
     ListarPortaisComponent,
     CadastroPortalComponent,
     ExcluirPortalComponent,
-    AlterarPortalComponent
+    AlterarPortalComponent,
+    MensagemSucessoComponent,
+    MensagemAlterarComponent
   ],
   imports: [
     BrowserModule,

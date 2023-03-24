@@ -36,3 +36,8 @@ a {
     height: 20px;
     margin-top: 5px;
 }
+
+.radio {
+    display: flex;
+    justify-content: space-around;
+}

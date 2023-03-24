@@ -41,7 +41,7 @@ export class AlterarPortalComponent implements OnInit {
   editarPortal() {
     console.log("Aqui mesmo: ", this.form.value);
     this.service.alterar(this.form.value).subscribe(() => {
-      this.router.navigate([''])
+      this.router.navigate(['mensagem-alterar'])
     })
   }
 

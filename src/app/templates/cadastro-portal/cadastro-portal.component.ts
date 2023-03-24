@@ -28,13 +28,15 @@ export class CadastroPortalComponent implements OnInit {
       servidorHomologacao: [''],
       versaoWordpressHomologacao: [''],
       responsavel: [''],
+      ativo: [''],
+      atualizado: [''],
     });
   }
 
   submit(){
     if(this.form.valid){
       this.service.adicionarPortal(this.form.value).subscribe(() => {
-      this.router.navigate(['']);
+      this.router.navigate(['mensagem-sucesso']);
     
       })
     }
