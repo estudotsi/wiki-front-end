@@ -28,8 +28,8 @@ export class CadastroPortalComponent implements OnInit {
       servidorHomologacao: [''],
       versaoWordpressHomologacao: [''],
       responsavel: [''],
-      ativo: [''],
-      atualizado: [''],
+      status: [''],
+      update: [''],
     });
   }
 

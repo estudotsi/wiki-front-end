@@ -13,6 +13,7 @@ import { ExcluirPortalComponent } from './templates/excluir-portal/excluir-porta
 import { AlterarPortalComponent } from './templates/alterar-portal/alterar-portal.component';
 import { MensagemSucessoComponent } from './templates/mensagem-sucesso/mensagem-sucesso.component';
 import { MensagemAlterarComponent } from './templates/mensagem-alterar/mensagem-alterar.component';
+import { DetalheComponent } from './templates/detalhe/detalhe.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MensagemAlterarComponent } from './templates/mensagem-alterar/mensagem-
     ExcluirPortalComponent,
     AlterarPortalComponent,
     MensagemSucessoComponent,
-    MensagemAlterarComponent
+    MensagemAlterarComponent,
+    DetalheComponent
   ],
   imports: [
     BrowserModule,

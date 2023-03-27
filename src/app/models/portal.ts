@@ -8,6 +8,6 @@ export interface Portal {
     servidorHomologacao?: string;
     versaoWordpressHomologacao?: string;
     responsavel?: string;
-    ativo?: boolean;
-    atualizado?: boolean;
+    status?: string;
+    update?: string;
 }

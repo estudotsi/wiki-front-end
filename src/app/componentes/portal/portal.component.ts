@@ -14,5 +14,5 @@ export class PortalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

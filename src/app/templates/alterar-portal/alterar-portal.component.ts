@@ -14,7 +14,7 @@ export class AlterarPortalComponent implements OnInit {
   public form!: FormGroup;
   portal!: Portal;
 
-  constructor(private fb: FormBuilder, private service: PortalService, private router: Router, private route: ActivatedRoute,) { }
+  constructor(private fb: FormBuilder, private service: PortalService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
