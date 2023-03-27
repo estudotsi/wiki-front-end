@@ -1,4 +1,4 @@
-<div class="container mt-2 p-4">
+<div class="container mt-2 p-4 d-flex justify-content-center">
     <div class="row">
         <div class="card card-margin">
             <div class="card-header no-border">
@@ -17,24 +17,27 @@
                         </div>
                     </div>
                     <ol class="widget-49-meeting-points">
-                        <li class="widget-49-meeting-item-title"><span>Url de produção:</span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Url de produção:</span></li>
                         <li class="widget-49-meeting-item" *ngIf="portal"><span><a href="{{ portal.urlProducao }}" target="_blank">{{ portal.urlProducao }}</a></span></li>
-                        <li class="widget-49-meeting-item-title"><span>Servidor de Produção:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.servidorProducao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Versão do Wordopress Produção:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.versaoWordpressProducao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Url de homologação:</span></li>
-                        <li class="widget-49-meeting-item"><span><a href="{{ portal.urlHomologacao }}" target="_blank">{{ portal.urlHomologacao }}</a></span></li>
-                        <li class="widget-49-meeting-item-title"><span>Servidor de Homologação:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.servidorHomologacao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Versão do Wordopress Homologação:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.versaoWordpressHomologacao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Responsável:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.responsavel }} </span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Servidor de Produção:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span>{{ portal.servidorProducao }}</span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Versão do Wordopress Produção:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span>{{ portal.versaoWordpressProducao }}</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span class="span-title">Url de homologação:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span><a href="{{ portal.urlHomologacao }}" target="_blank">{{ portal.urlHomologacao }}</a></span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Servidor de Homologação:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span>{{ portal.servidorHomologacao }}</span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Versão do Wordopress Homologação:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span>{{ portal.versaoWordpressHomologacao }}</span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Responsável:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span>{{ portal.responsavel }} </span></li>
+                        <li class="widget-49-meeting-item"><span class="span-title">Status:</span></li>
+                        <li class="widget-49-meeting-item" *ngIf="portal"><span>{{ portal.status }} </span></li>
                     </ol>
                     <div class="botoes">
-                        <button type="button" class="btn btn-outline-danger m-1" routerLink="/excluir-portal/{{portal.id}}">Excluir</button>
-                        <button type="button" class="btn btn-outline-warning m-1" routerLink="/alterar-portal/{{portal.id}}">Alterar</button>
+                        <button type="button" class="btn btn-outline-info m-1" routerLink="/">Voltar</button>
+                        <button *ngIf="portal" type="button" class="btn btn-outline-danger m-1" routerLink="/excluir-portal/{{portal.id}}">Excluir</button>
+                        <button *ngIf="portal" type="button" class="btn btn-outline-warning m-1" routerLink="/alterar-portal/{{portal.id}}">Alterar</button>
                     </div>
                 </div>
             </div>

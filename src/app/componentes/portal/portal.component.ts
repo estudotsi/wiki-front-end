@@ -9,6 +9,7 @@ import { Portal } from 'src/app/models/portal';
 export class PortalComponent implements OnInit {
 
   @Input() portal!: Portal;
+  status: boolean = true;
 
   constructor() { }
 

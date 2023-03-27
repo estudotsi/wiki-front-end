@@ -34,6 +34,7 @@ export class AlterarPortalComponent implements OnInit {
         servidorHomologacao: [portal.servidorHomologacao],
         versaoWordpressHomologacao: [portal.versaoWordpressHomologacao],
         responsavel: [portal.responsavel],
+        status: [portal.status]
       });
     });
   }

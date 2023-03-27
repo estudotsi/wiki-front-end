@@ -1,153 +1,30 @@
-<!--<div class="container mt-2 p-4">
-    <div class="row">
-        <div class="card card-margin">
-            <div class="card-header no-border">
-                <h5 class="card-title"></h5>
-            </div>
-            <div class="card-body pt-0">
-                <div class="widget-49">
-                    <div class="widget-49-title-wrapper">
-                        <div class="widget-49-date-success">
-                            <span class="widget-49-date-day">17</span>
-                            <span class="widget-49-date-month">mar</span>
-                        </div>
-                        <div class="widget-49-meeting-info">
-                            <span class="widget-49-pro-title">{{ portal.nome }}</span>
-                            <span class="widget-49-meeting-time"></span>
-                        </div>
-                    </div>
-                    <ol class="widget-49-meeting-points">
-                        <li class="widget-49-meeting-item-title"><span>Url de produção:</span></li>
-                        <li class="widget-49-meeting-item"><span><a href="{{ portal.urlProducao }}" target="_blank">{{ portal.urlProducao }}</a></span></li>
-                        <li class="widget-49-meeting-item-title"><span>Servidor de Produção:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.servidorProducao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Versão do Wordopress Produção:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.versaoWordpressProducao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Url de homologação:</span></li>
-                        <li class="widget-49-meeting-item"><span><a href="{{ portal.urlHomologacao }}" target="_blank">{{ portal.urlHomologacao }}</a></span></li>
-                        <li class="widget-49-meeting-item-title"><span>Servidor de Homologação:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.servidorHomologacao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Versão do Wordopress Homologação:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.versaoWordpressHomologacao }}</span></li>
-                        <li class="widget-49-meeting-item-title"><span>Responsável:</span></li>
-                        <li class="widget-49-meeting-item"><span>{{ portal.responsavel }} </span></li>
-                    </ol>
-                    <div class="botoes">
-                        <button type="button" class="btn btn-outline-danger m-1" routerLink="/excluir-portal/{{portal.id}}">Excluir</button>
-                        <button type="button" class="btn btn-outline-warning m-1" routerLink="/alterar-portal/{{portal.id}}">Alterar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<div *ngIf="portal.status == 'Desatualizado' ; then orange; else green">
 
-<div class="col-md-10 ">
-    <div class="row ">
-        <div class="col-xl-3 col-lg-6">
-            <div class="card l-bg-cherry">
-                <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
-                    <div class="mb-4">
-                        <h5 class="card-title mb-0">New Orders</h5>
-                    </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                3,243
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span>12.5% <i class="fa fa-arrow-up"></i></span>
-                        </div>
-                    </div>
-                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-            <div class="card l-bg-blue-dark">
-                <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
-                    <div class="mb-4">
-                        <h5 class="card-title mb-0">Customers</h5>
-                    </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                15.07k
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span>9.23% <i class="fa fa-arrow-up"></i></span>
-                        </div>
-                    </div>
-                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                        <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-            <div class="card l-bg-green-dark">
-                <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
-                    <div class="mb-4">
-                        <h5 class="card-title mb-0">Ticket Resolved</h5>
-                    </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                578
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span>10% <i class="fa fa-arrow-up"></i></span>
-                        </div>
-                    </div>
-                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                        <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-            <div class="card l-bg-orange-dark">
-                <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
-                    <div class="mb-4">
-                        <h5 class="card-title mb-0">Revenue Today</h5>
-                    </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span>2.5% <i class="fa fa-arrow-up"></i></span>
-                        </div>
-                    </div>
-                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-
-<div class="card l-bg-cherry">
-    <div class="title">
-        <h4>{{ portal.nome }}</h4>
-        <div class="icon-card"><i class="bi bi-bell-fill"></i></div>
-    </div>
-    <div class="info">
-        <h5 style="color: bisque;">{{ portal.status }}</h5>
-        <h5 style="color: goldenrod;">{{ portal.update }}</h5>
-        <button type="button" routerLink="/detalhe/{{portal.id}}" class="btn btn-info">Detalhe</button>
-    </div>     
 </div>
+
+<ng-template #orange>
+    <div class="card l-bg-orange">
+        <div class="title">
+            <h4>{{ portal.nome }}</h4>
+            <div class="icon-card"><i class="bi bi-bell-fill"></i></div>
+        </div>
+        <div class="info">
+            <h5 style="color: bisque; margin-top: 11px;">{{ portal.status }}</h5>
+            <h5><a class="btn btn-lg btn-flash-border-secondary" routerLink="/detalhe/{{portal.id}}">Detalhe</a></h5>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #green>
+    <div class="card l-bg-green-dark">
+        <div class="title">
+            <h4>{{ portal.nome }}</h4>
+            <div class="icon-card"><i class="bi bi-bell-fill"></i></div>
+        </div>
+        <div class="info">
+            <h5 style="color: bisque; margin-top: 11px;">{{ portal.status }}</h5>
+            <h5><a class="btn btn-lg btn-flash-border-secondary" routerLink="/detalhe/{{portal.id}}">Detalhe</a></h5>
+        </div>
+    </div>
+</ng-template>

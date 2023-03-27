@@ -59,30 +59,27 @@
                                             <input type="text " id="responsavel" class="form-control " formControlName="responsavel" placeholder="Responsável ">
                                         </div>
                                     </div>
-                                                      <div class="col-12">
+                                    <div class="col-12">
                                         <div class="input-group">
                                             <div class="input-group-text "><i class="bi bi-pen "></i></div>
                                             <select class="form-select" formControlName="status" aria-label="Default select example">
                                                 <option value="" disabled selected hidden>Status</option>
-                                                <option value="Ativo" selected>Ativo</option>
-                                                <option value="Inativo">Inativo</option>
-                                              </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="input-group">
-                                            <div class="input-group-text "><i class="bi bi-pen "></i></div>
-                                            <select class="form-select" formControlName="update" aria-label="Default select example">
-                                                <option value="" disabled selected hidden>Update</option>
                                                 <option value="Atualizado" selected>Atualizado</option>
                                                 <option value="Desatualizado">Desatualizado</option>
                                               </select>
                                         </div>
+                                        <div *ngIf="form.invalid && form.controls.nome.touched" class=" alert alert-danger ">
+                                            <div>Obrigatório</div>
+                                        </div>
                                     </div>
-                                    <div class="col-12 ">
-                                        <button class="btn px-4 float-end mt-4" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
+                                    <div class="button-group">
+                                        <div class="col-12 ">
+                                            <button class="btn mt-4" style="background-color: cadetblue;" (click)="cancelar()">Cancelar</button>
+                                        </div>
+                                        <div class="col-12 ">
+                                            <button class="btn px-4 float-end mt-4" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
+                                        </div>
                                     </div>
-
                                 </form>
                             </div>
                         </div>

@@ -9,5 +9,4 @@ export interface Portal {
     versaoWordpressHomologacao?: string;
     responsavel?: string;
     status?: string;
-    update?: string;
 }

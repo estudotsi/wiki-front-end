@@ -28,8 +28,9 @@ export class CadastroPortalComponent implements OnInit {
       servidorHomologacao: [''],
       versaoWordpressHomologacao: [''],
       responsavel: [''],
-      status: [''],
-      update: [''],
+      status: ['', Validators.compose([
+        Validators.required
+      ])],
     });
   }
 
@@ -40,6 +41,10 @@ export class CadastroPortalComponent implements OnInit {
     
       })
     }
+  }
+
+  cancelar() {
+    this.router.navigate([''])
   }
 
 }
