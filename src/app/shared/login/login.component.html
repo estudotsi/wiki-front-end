@@ -1,4 +1,4 @@
-<div class="login-page bg-light">
+<!--<div class="login-page bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
@@ -29,6 +29,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="wrapper">
+    <div class="card-content">
+        <div class="container">
+            <div class="image">
+                <i class="bi bi-box-arrow-in-right"></i>
+            </div>
+            <h1>Entrar</h1>
+            <p>Digite a senha</p>
+        </div>
+        <div class="form-input">
+            <label for="password"></label>
+            <input type="password" [(ngModel)]="senha" required id="senha" standalone placeholder="Senha">
+            <button class="subscribe-btn" (click)="fazerLogin()">Entrar</button>
+            <p style="color: brown;">{{ response2 }}</p>
+            <div *ngif="respostaUsuario.name">
+                <p style="color: brown;">{{ resposta3 }}</p>
             </div>
         </div>
     </div>
