@@ -1,0 +1,46 @@
+a {
+    text-decoration: none;
+}
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+}
+
+.input-group-text {
+    background-color: #CCCCFF;
+}
+
+.form-right {
+    background-color: #CCCCFF;
+}
+
+.btn {
+    background-color: #DDA0DD;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.container{
+    height:50%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rounded{
+
+}
+

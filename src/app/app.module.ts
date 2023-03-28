@@ -8,12 +8,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { PortalComponent } from './componentes/portal/portal.component';
 import { ListarPortaisComponent } from './templates/listar-portais/listar-portais.component';
 import { CadastroPortalComponent } from './templates/cadastro-portal/cadastro-portal.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExcluirPortalComponent } from './templates/excluir-portal/excluir-portal.component';
 import { AlterarPortalComponent } from './templates/alterar-portal/alterar-portal.component';
 import { MensagemSucessoComponent } from './templates/mensagem-sucesso/mensagem-sucesso.component';
 import { MensagemAlterarComponent } from './templates/mensagem-alterar/mensagem-alterar.component';
 import { DetalheComponent } from './templates/detalhe/detalhe.component';
+import { LoginComponent } from './shared/login/login.component';
+import { AuthService } from './shared/login/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { DetalheComponent } from './templates/detalhe/detalhe.component';
     AlterarPortalComponent,
     MensagemSucessoComponent,
     MensagemAlterarComponent,
-    DetalheComponent
+    DetalheComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +37,12 @@ import { DetalheComponent } from './templates/detalhe/detalhe.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
