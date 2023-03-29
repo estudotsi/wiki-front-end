@@ -13,50 +13,16 @@ import { Senha } from './senha';
 })
 export class LoginComponent implements OnInit {
 
-   senha: any;
-   response: any;
-   response2: any;
-   mostrarMenuEmitter = new EventEmitter<boolean>();
-   private autenticado: boolean = false;
-   private url: string = 'https://localhost:7007/login';
-   token!: string;
-   //respostaUsuario!: Resposta;
-   //retorno!: Resposta;
-   resposta3: any;
+  senha: any;
 
-
-  constructor(private router: Router, private httpClient: HttpClient) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  /*fazerLogin(){
-    this.response = this.authService.fazerLogin(this.senha);
-    console.log("Aqui1", this.response);
-  }*/
   fazerLogin(){
-    const usuarioLogin: Login = {
-      id: 0,
-      name: "Admin",
-      password: this.senha,
-      role: "admin"
-    };
-    this.httpClient.post(this.url, usuarioLogin, { observe: 'response'}).subscribe({
-      next:(res => {
-        this.autenticado = true;
-        this.mostrarMenuEmitter.emit(true);
-        this.response = res.body,
-        this.token = this.response.token
-        this.resposta3 = this.response.user.name;
-        console.log(this.resposta3);
-      }),
-        error:(error => {
-          this.autenticado = false;
-          this.mostrarMenuEmitter.emit(false)
-          this.response2 = error.error.message
-         })
-         
-    }
-    )};
-
+    this.authService.fazerLogin(this.senha);
+  
+  }
+ 
 }

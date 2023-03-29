@@ -16,6 +16,7 @@ import { MensagemAlterarComponent } from './templates/mensagem-alterar/mensagem-
 import { DetalheComponent } from './templates/detalhe/detalhe.component';
 import { LoginComponent } from './shared/login/login.component';
 import { AuthService } from './shared/login/auth.service';
+import { AuthGuard } from './shared/guards/auth-guard';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AuthService } from './shared/login/auth.service';
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

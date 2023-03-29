@@ -9,12 +9,17 @@ import { Resposta } from './resposta';
 })
 export class AuthService {
 
+  senha: any;
+  response: any;
+  responseError: any;
   mostrarMenuEmitter = new EventEmitter<boolean>();
-  private autenticado: boolean = false;
+  autenticado: boolean = false;
   private url: string = 'https://localhost:7007/login';
   token!: string;
-  respostaRetorno!: Resposta;
-  retorno: any
+  //respostaUsuario!: Resposta;
+  //retorno!: Resposta;
+  nomeUsuario: any;
+
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 
@@ -29,7 +34,7 @@ export class AuthService {
     }
   }*/
 
-  fazerLogin(senha: string): any{
+  fazerLogin(senha: string){
     const usuarioLogin: Login = {
       id: 0,
       name: "Admin",
@@ -39,15 +44,18 @@ export class AuthService {
     this.httpClient.post(this.url, usuarioLogin, { observe: 'response'}).subscribe({
       next:(res => {
         this.autenticado = true;
+        this.response = res.body,
+        this.token = this.response.token
+        this.nomeUsuario = this.response.user.name;
+        this.autenticado = true;
         this.mostrarMenuEmitter.emit(true);
-        return res.body,
-        console.log()}),
+        this.router.navigate(['listar']);
+      }),
         error:(error => {
           this.autenticado = false;
           this.mostrarMenuEmitter.emit(false)
-          this.retorno = JSON.stringify(error.error.message)
-          return this.retorno,
-          console.log(this.retorno)})
+          this.responseError = error.error.message
+         })
          
     }
     )};
