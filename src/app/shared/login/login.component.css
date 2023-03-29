@@ -114,3 +114,7 @@ input {
     outline: none;
     cursor: pointer;
 }
+
+.subscribe-btn:disabled {
+    opacity: 0.3;
+}

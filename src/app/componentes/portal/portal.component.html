@@ -3,7 +3,7 @@
 </div>
 
 <ng-template #orange>
-    <div class="card l-bg-orange">
+    <div class="card l-bg-orange" @shownState>
         <div class="title">
             <h4>{{ portal.nome }}</h4>
             <div class="icon-card"><i class="bi bi-bell-fill"></i></div>
@@ -17,7 +17,7 @@
 
 
 <ng-template #green>
-    <div class="card l-bg-green-dark">
+    <div class="card l-bg-green-dark" @shownState>
         <div class="title">
             <h4>{{ portal.nome }}</h4>
             <div class="icon-card"><i class="bi bi-clipboard-check-fill"></i></div>
@@ -28,3 +28,7 @@
         </div>
     </div>
 </ng-template>
+
+<div *ngFor="let portali of listaDeVersoes$">
+    {{ portali | json }}
+</div>

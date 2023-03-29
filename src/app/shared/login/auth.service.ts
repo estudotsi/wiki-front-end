@@ -11,7 +11,8 @@ export class AuthService {
 
   senha: any;
   response: any;
-  responseError: any;
+  responseError!: string;
+  emitirMensagemErro = new EventEmitter<string>();
   mostrarMenuEmitter = new EventEmitter<boolean>();
   autenticado: boolean = false;
   private url: string = 'https://localhost:7007/login';
@@ -34,19 +35,16 @@ export class AuthService {
     }
   }*/
 
-  fazerLogin(senha: string){
-    const usuarioLogin: Login = {
-      id: 0,
-      name: "Admin",
-      password: senha,
-      role: "admin"
-    };
+  fazerLogin(usuarioLogin: Login){
+
     this.httpClient.post(this.url, usuarioLogin, { observe: 'response'}).subscribe({
       next:(res => {
         this.autenticado = true;
         this.response = res.body,
         this.token = this.response.token
+        sessionStorage.setItem('token', this.token);
         this.nomeUsuario = this.response.user.name;
+        sessionStorage.setItem('usuario', this.nomeUsuario);
         this.autenticado = true;
         this.mostrarMenuEmitter.emit(true);
         this.router.navigate(['listar']);
@@ -55,6 +53,8 @@ export class AuthService {
           this.autenticado = false;
           this.mostrarMenuEmitter.emit(false)
           this.responseError = error.error.message
+          this.emitirMensagemErro.emit(this.responseError);
+          console.log("Error: ", this.responseError);
          })
          
     }

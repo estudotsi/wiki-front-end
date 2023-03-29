@@ -42,12 +42,11 @@
             <h1>Entrar</h1>
             <p>Digite a senha</p>
         </div>
-        <div class="form-input">
+        <form [formGroup]="form" class="form-input">
             <label for="password"></label>
-            <input type="password" [(ngModel)]="senha" required id="senha" standalone placeholder="Senha">
-            <button class="subscribe-btn" (click)="fazerLogin()">Entrar</button>
-            <p style="color: brown;"></p>
-        </div>
+            <input type="password" formControlName="password" required id="password" standalone placeholder="Senha">
+            <button type="submit" class="subscribe-btn" [disabled]="form.invalid" (click)="fazerLogin()">Entrar</button>
+            <p style="color: brown; ">{{ menssagemErro }}</p>
+        </form>
     </div>
 </div>
-

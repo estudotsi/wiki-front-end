@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, EMPTY, map, Observable } from 'rxjs';
 import { Portal } from '../models/portal';
 
@@ -9,17 +9,33 @@ import { Portal } from '../models/portal';
 export class PortalService {
 
   private url: string = 'https://localhost:7007/Portal';
+  private urlWordpress: string = "http://api.wordpress.org/core/stable-check/1.0/";
   teste: any;
-  handleError: any
+  handleError: any;
 
   constructor(private httpClient: HttpClient) { }
 
-  public listarPortais(): Observable<Portal[]>{
+ /* public listarPortais(): Observable<Portal[]>{
     return this.httpClient.get<Portal[]>(this.url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
-  }
+  }*/
+
+  listarVersoesWordpress(){
+    return this.httpClient.get(this.urlWordpress);
+}
+
+  listarPortais(){
+    const token = sessionStorage.getItem('token');
+    console.log("Aqui: ", token);
+    var reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+
+     });
+    return this.httpClient.get<Portal[]>(this.url, { headers: reqHeader });
+}
 
   adicionarPortal(portal: Portal): Observable<Portal> {
     return this.httpClient.post<Portal>(this.url, portal).pipe(
