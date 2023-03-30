@@ -14,7 +14,7 @@ export class MensagemAlterarComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigate([''])
+    this.router.navigate(['listar'])
   }
 
 

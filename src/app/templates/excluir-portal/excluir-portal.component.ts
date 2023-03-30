@@ -24,13 +24,13 @@ portal!: Portal;
   excluirPortal() {
     if(this.portal.id) {
       this.service.excluir(this.portal.id).subscribe(() => {
-        this.router.navigate([''])
+        this.router.navigate(['listar'])
       })
     }
   }
 
   cancelar() {
-    this.router.navigate([''])
+    this.router.navigate(['listar'])
   }
 
 

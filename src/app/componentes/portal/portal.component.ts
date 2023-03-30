@@ -15,21 +15,24 @@ export class PortalComponent implements OnInit {
 
   @Input() portal!: Portal;
   status: boolean = true;
-  listaDeVersoes$!: any;
+  listaDeVersoes!: any;
   subscription!: Subscription;
-  teste: any;
+  version!: string;
 
   constructor(private service: PortalService) { }
 
   ngOnInit(): void {
+ 
     this.subscription = this.service.listarVersoesWordpress().subscribe({
-      next: data => this.listaDeVersoes$ = data,
+      next: data => (this.listaDeVersoes = Object.keys(data),
+      this.version = this.listaDeVersoes.pop()),
       error: error => console.error(error),
       complete: () => console.log()
+    
     });
   }
-
-  ngOnDestroy(): void {
+  
+ ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
   

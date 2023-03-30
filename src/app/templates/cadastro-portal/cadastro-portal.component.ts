@@ -27,10 +27,7 @@ export class CadastroPortalComponent implements OnInit {
       urlHomologacao: [''],
       servidorHomologacao: [''],
       versaoWordpressHomologacao: [''],
-      responsavel: [''],
-      status: ['', Validators.compose([
-        Validators.required
-      ])],
+      responsavel: ['']
     });
   }
 

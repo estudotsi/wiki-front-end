@@ -1,11 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AuthService } from './auth.service';
-import { Login } from './login';
-import { Resposta } from './resposta';
-import { Senha } from './senha';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +13,18 @@ export class LoginComponent implements OnInit {
 
   senha: any;
   menssagemErro!: string;
-
+  
   public form!: FormGroup;
   
-  constructor(private authService: AuthService, private fb: FormBuilder) { }
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+
+    if(sessionStorage.getItem('crocknole')){
+     this.authService.mostrarMenuEmitter.emit(true);
+     this.authService.autenticado = true;
+      this.router.navigate(['listar']);
+    }
     this.form = this.fb.group({
       id: [0],
       name: ['Admin'],
@@ -31,13 +34,6 @@ export class LoginComponent implements OnInit {
       role: ['admin'],
     });
   }
-
-  /*fazerLogin(){
-    this.authService.fazerLogin(this.senha);
-    this.authService.emitirMensagemErro.subscribe(
-      res => this.menssagemErro = res
-    )
-  }*/
 
   fazerLogin(){
     if(this.form.valid){

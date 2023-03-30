@@ -18,7 +18,9 @@ const routes: Routes = [
   {path: 'alterar-portal/:id', component: AlterarPortalComponent, canActivate: [AuthGuard]},
   {path: 'mensagem-sucesso', component: MensagemSucessoComponent, canActivate: [AuthGuard]},
   {path: 'mensagem-alterar', component: MensagemAlterarComponent, canActivate: [AuthGuard]},
-  {path: 'detalhe/:id', component: DetalheComponent, canActivate: [AuthGuard]}
+  {path: 'detalhe/:id', component: DetalheComponent, canActivate: [AuthGuard]},
+  {path: '', component: LoginComponent}
+
 ];
 
 @NgModule({

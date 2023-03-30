@@ -15,19 +15,12 @@ export class PortalService {
 
   constructor(private httpClient: HttpClient) { }
 
- /* public listarPortais(): Observable<Portal[]>{
-    return this.httpClient.get<Portal[]>(this.url).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
-  }*/
-
   listarVersoesWordpress(){
     return this.httpClient.get(this.urlWordpress);
 }
 
   listarPortais(){
-    const token = sessionStorage.getItem('token');
+    const token = sessionStorage.getItem('crocknole');
     console.log("Aqui: ", token);
     var reqHeader = new HttpHeaders({ 
         'Content-Type': 'application/json',
