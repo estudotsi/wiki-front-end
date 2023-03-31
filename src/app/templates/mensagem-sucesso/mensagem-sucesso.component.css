@@ -64,11 +64,8 @@
 }
 
 .container {
-    border-radius: 20px;
-    margin-top: 5%;
-    height: 50% !important;
-    width: 50% !important;
-    backdrop-filter: blur(5px);
+    height: 500px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;

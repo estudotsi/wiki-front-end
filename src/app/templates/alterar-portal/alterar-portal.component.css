@@ -46,3 +46,11 @@ a {
 .cancelar {
     background-color: bisque;
 }
+
+@media only screen and (max-width: 768px) {
+    .button-group {
+        width: 160px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

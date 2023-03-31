@@ -16,7 +16,8 @@ import { DetalheComponent } from './templates/detalhe/detalhe.component';
 import { LoginComponent } from './shared/login/login.component';
 import { AuthService } from './shared/login/auth.service';
 import { AuthGuard } from './shared/guards/auth-guard';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LogoutComponent } from './shared/logout/logout.component'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     MensagemAlterarComponent,
     DetalheComponent,
     LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

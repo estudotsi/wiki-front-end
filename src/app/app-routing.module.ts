@@ -9,6 +9,7 @@ import { MensagemAlterarComponent } from './templates/mensagem-alterar/mensagem-
 import { DetalheComponent } from './templates/detalhe/detalhe.component';
 import { LoginComponent } from './shared/login/login.component';
 import { AuthGuard } from './shared/guards/auth-guard';
+import { LogoutComponent } from './shared/logout/logout.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path: 'mensagem-sucesso', component: MensagemSucessoComponent, canActivate: [AuthGuard]},
   {path: 'mensagem-alterar', component: MensagemAlterarComponent, canActivate: [AuthGuard]},
   {path: 'detalhe/:id', component: DetalheComponent, canActivate: [AuthGuard]},
-  {path: '', component: LoginComponent}
+  {path: 'logout', component: LogoutComponent, canActivate: [AuthGuard]}
 
 ];
 
