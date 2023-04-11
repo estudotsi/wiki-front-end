@@ -10,9 +10,13 @@ import { DetalheComponent } from './templates/detalhe/detalhe.component';
 import { LoginComponent } from './shared/login/login.component';
 import { AuthGuard } from './shared/guards/auth-guard';
 import { LogoutComponent } from './shared/logout/logout.component';
+import { ConsultaComponent } from './componentes/consulta/consulta.component';
+import { ConsultaDetalhesComponent } from './componentes/consulta-detalhes/consulta-detalhes.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '/', component: ConsultaComponent},
+  {path: 'consulta-detalhes/:id', component: ConsultaDetalhesComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'listar', component: ListarPortaisComponent, canActivate: [AuthGuard]},
   {path: 'cadastrar-portal', component: CadastroPortalComponent, canActivate: [AuthGuard]},
   {path: 'excluir-portal/:id', component: ExcluirPortalComponent, canActivate: [AuthGuard]},
