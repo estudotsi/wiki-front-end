@@ -31,15 +31,29 @@ export class PortalService {
 }
 
   adicionarPortal(portal: Portal): Observable<Portal> {
-    return this.httpClient.post<Portal>(this.url, portal).pipe(
+    const token = sessionStorage.getItem('crocknole');
+    console.log("Aqui: ", token);
+    var reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+
+     });
+    return this.httpClient.post<Portal>(this.url, portal, { headers: reqHeader }).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
   excluir(id: number): Observable<Portal> {
+    const token = sessionStorage.getItem('crocknole');
+    console.log("Aqui: ", token);
+    var reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+
+     });
     const url = `${this.url}/${id}`
-    return this.httpClient.delete<Portal>(url).pipe(
+    return this.httpClient.delete<Portal>(url, { headers: reqHeader }).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -51,9 +65,16 @@ export class PortalService {
   }
 
   alterar(portal: Portal): Observable<Portal> {
+    const token = sessionStorage.getItem('crocknole');
+    console.log("Aqui: ", token);
+    var reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+
+     });
     console.log("Aqui", portal.id)
     const url = `${this.url}/${portal.id}`
-    return this.httpClient.put<Portal>(url, portal).pipe(
+    return this.httpClient.put<Portal>(url, portal, { headers: reqHeader }).pipe(
     map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

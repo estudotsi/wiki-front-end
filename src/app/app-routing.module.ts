@@ -14,7 +14,7 @@ import { ConsultaComponent } from './componentes/consulta/consulta.component';
 import { ConsultaDetalhesComponent } from './componentes/consulta-detalhes/consulta-detalhes.component';
 
 const routes: Routes = [
-  {path: '/', component: ConsultaComponent},
+  {path: '', component: ConsultaComponent},
   {path: 'consulta-detalhes/:id', component: ConsultaDetalhesComponent},
   {path: 'login', component: LoginComponent},
   {path: 'listar', component: ListarPortaisComponent, canActivate: [AuthGuard]},

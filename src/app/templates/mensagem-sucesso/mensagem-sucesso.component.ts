@@ -14,7 +14,7 @@ export class MensagemSucessoComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigate([''])
+    this.router.navigate(['listar'])
   }
 
 
