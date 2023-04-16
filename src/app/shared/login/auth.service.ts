@@ -14,7 +14,7 @@ export class AuthService {
   emitirMensagemErro = new EventEmitter<string>();
   mostrarMenuEmitter = new EventEmitter<boolean>();
   autenticado: boolean = false;
-  private url: string = 'https://localhost:7007/login';
+  private url: string = 'http://homolog-controlesocialup.cg.df.gov.br/login';
   token!: string;
   nomeUsuario: any;
 
@@ -41,7 +41,7 @@ export class AuthService {
           this.responseError = error.error.message
           this.emitirMensagemErro.emit(this.responseError);
          })
-         
+
     }
     )};
 

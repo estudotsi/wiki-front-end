@@ -8,7 +8,7 @@ import { Portal } from '../models/portal';
 })
 export class PortalService {
 
-  private url: string = 'https://localhost:7007/Portal';
+  private url: string = 'http://homolog-controlesocialup.cg.df.gov.br/Portal';
   private urlWordpress: string = "http://api.wordpress.org/core/stable-check/1.0/";
   teste: any;
   handleError: any;
@@ -22,7 +22,7 @@ export class PortalService {
   listarPortais(){
     const token = sessionStorage.getItem('crocknole');
     console.log("Aqui: ", token);
-    var reqHeader = new HttpHeaders({ 
+    var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
 
@@ -33,7 +33,7 @@ export class PortalService {
   adicionarPortal(portal: Portal): Observable<Portal> {
     const token = sessionStorage.getItem('crocknole');
     console.log("Aqui: ", token);
-    var reqHeader = new HttpHeaders({ 
+    var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
 
@@ -47,7 +47,7 @@ export class PortalService {
   excluir(id: number): Observable<Portal> {
     const token = sessionStorage.getItem('crocknole');
     console.log("Aqui: ", token);
-    var reqHeader = new HttpHeaders({ 
+    var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
 
@@ -67,7 +67,7 @@ export class PortalService {
   alterar(portal: Portal): Observable<Portal> {
     const token = sessionStorage.getItem('crocknole');
     console.log("Aqui: ", token);
-    var reqHeader = new HttpHeaders({ 
+    var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
 

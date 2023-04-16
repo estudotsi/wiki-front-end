@@ -39,7 +39,7 @@ export class ConsultaDetalhesComponent implements OnInit {
   }
 
   gerarPdf(portal: Portal){
-    this.servicePdf.listarPortal(portal).subscribe({
+    this.servicePdf.listarPortalAnonimo(portal).subscribe({
       next: data => {
         let blob: Blob = data.body as Blob;
         let url = window.URL.createObjectURL(blob);

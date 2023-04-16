@@ -7,7 +7,7 @@ import { Portal } from '../models/portal';
 })
 export class PdfServiceService {
 
-  private url: string = 'https://localhost:7007/report';
+  private url: string = 'http://homolog-controlesocialup.cg.df.gov.br/report';
   portal!: Portal;
 
   constructor(private httpClient: HttpClient) { }
@@ -17,10 +17,18 @@ export class PdfServiceService {
   }
 
   listarPortal(portal: Portal){
-    return this.httpClient.post('https://localhost:7007/portalPdfInfo', portal, { responseType: 'blob', observe: 'response' });
+    return this.httpClient.post('http://homolog-controlesocialup.cg.df.gov.br/portalPdfInfo', portal, { responseType: 'blob', observe: 'response' });
+  }
+
+  listarPortalAnonimo(portal: Portal){
+    portal.servidorProducao = "";
+    portal.servidorHomologacao = "";
+    return this.httpClient.post('http://homolog-controlesocialup.cg.df.gov.br/portalPdfInfo', portal, { responseType: 'blob', observe: 'response' });
   }
 
 }
+
+
 
 
 
