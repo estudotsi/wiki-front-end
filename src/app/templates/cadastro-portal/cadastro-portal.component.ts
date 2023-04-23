@@ -11,7 +11,7 @@ import { PortalService } from 'src/app/services/portal.service';
 export class CadastroPortalComponent implements OnInit {
 
   public form!: FormGroup;
-  
+
   constructor(private fb: FormBuilder, private service: PortalService, private router: Router) {}
 
   ngOnInit(): void {
@@ -35,13 +35,13 @@ export class CadastroPortalComponent implements OnInit {
     if(this.form.valid){
       this.service.adicionarPortal(this.form.value).subscribe(() => {
       this.router.navigate(['mensagem-sucesso']);
-    
+
       })
     }
   }
 
   cancelar() {
-    this.router.navigate([''])
+    this.router.navigate(['listar'])
   }
 
 }

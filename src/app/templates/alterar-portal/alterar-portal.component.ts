@@ -46,7 +46,7 @@ export class AlterarPortalComponent implements OnInit {
   }
 
   cancelar() {
-    this.router.navigate([''])
+    this.router.navigate(['listar'])
   }
 
 }
