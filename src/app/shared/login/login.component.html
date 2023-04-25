@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="card-content">
+        <div class="container">
+            <div class="image">
+                <i class="bi bi-box-arrow-in-right"></i>
+            </div>
+            <h1 style="color: crimson;"><img src="../../../assets/img/logo.svg" height="50px">Portais</h1>
+            <p>Digite a senha</p>
+        </div>
+        <form [formGroup]="form" class="form-input">
+            <label for="password"></label>
+            <input type="password" formControlName="password" required id="password" standalone placeholder="Senha">
+            <button type="submit" class="subscribe-btn" [disabled]="form.invalid" (click)="fazerLogin()">Entrar</button>
+            <p style="color: brown; ">{{ menssagemErro }}</p>
+        </form>
+    </div>
+</div>

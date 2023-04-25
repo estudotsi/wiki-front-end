@@ -1,0 +1,8 @@
+<div class="p-3">
+    <button type="button" [routerLink]="['/cadastrar-portal']" class="btn btn-lg">Adicionar Portal</button>
+</div>
+<div class="container-card">
+    <div *ngFor="let portal of listaDePortais$">
+        <app-portal [portal]="portal"></app-portal>
+    </div>
+</div>
